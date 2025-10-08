@@ -9,7 +9,13 @@ interface MainProps {
 }
 
 export const TopMain: React.FC<MainProps> = ({ current, location }) => {
-  console.log(current.humidity, location.lat);
+  return (
+    <section>
+      <h1>{current.temp_c}</h1>
 
-  return <div>Header</div>;
+      <h2> {location.name} </h2>
+
+      <h3>{location.country}</h3>
+    </section>
+  );
 };
