@@ -10,11 +10,22 @@
   height: 2.5rem;
   padding: 1rem;
   font-weight: 600;
+  box-shadow: 3px 3px 10px rgba(29, 29, 29, 0.313);
   font-size: 1.1rem;
+
+  &:focus-visible {
+    outline: 0;
+  }
 }
 
 .input_button {
   border-radius: 0px 15px 15px 0px;
   background-color: #1c1c1c;
+  box-shadow: 3px 3px 10px rgba(29, 29, 29, 0.313);
   width: 3rem;
+  transition: ease 0.5s;
+
+  &:hover {
+    background-color: #383838;
+  }
 }

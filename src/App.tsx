@@ -20,7 +20,7 @@ export const App = () => {
       {isLoading && <h2>Cargando...</h2>}
 
       {!data ? (
-        <h2>Busqueda invalida, intente denuevo</h2>
+        <h2 className="herror_message">Busqueda inválida, intente denuevo</h2>
       ) : (
         <main>
           <TopMain {...data}></TopMain>

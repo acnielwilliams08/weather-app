@@ -24,6 +24,14 @@ body {
   gap: 3rem;
 }
 
+.herror_message {
+  background-color: rgba(255, 255, 255, 0.397);
+  padding: 1rem;
+  border-radius: 15px;
+  font-size: 18px;
+  box-shadow: 3px 3px 10px rgba(29, 29, 29, 0.313);
+}
+
 header,
 main {
   width: 100%;
