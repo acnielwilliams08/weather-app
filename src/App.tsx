@@ -1,8 +1,6 @@
 import { useState } from "react";
-import { SearchInpit } from "./components/SearchInpit";
+import { SearchInpit, TopMain, DownMain } from "./components/";
 import { useControlFetch } from "./hook/useControlFetch";
-import { TopMain } from "./components/TopMain";
-import { DownMain } from "./components/DownMain";
 
 export const App = () => {
   const [region, setRegion] = useState("Cuba");
