@@ -10,11 +10,13 @@ export const SearchInpit: React.FC<SearchInpitProps> = ({ onAddRegion }) => {
   const onSumbitInput = (event: FormEvent<HTMLFormElement>) => {
     event.preventDefault();
 
-    if (inputRef.current?.value) {
-      const inputValue = inputRef.current.value.trim();
-      onAddRegion(inputValue);
-      inputRef.current.value = "";
-    }
+    if (!inputRef.current?.value) return;
+
+    const inputValue = inputRef.current.value.trim();
+
+    onAddRegion(inputValue);
+
+    inputRef.current.value = "";
   };
 
   return (

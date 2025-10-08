@@ -12,8 +12,8 @@ export const App = () => {
   };
 
   const { data, isLoading } = useControlFetch(region);
+
   if (!data) return;
-  const { current, location } = data;
 
   return (
     <>
@@ -22,8 +22,8 @@ export const App = () => {
       </header>
 
       <main>
-        <TopMain current={current} location={location}></TopMain>
-        <DownMain current={current} location={location}></DownMain>
+        <TopMain {...data}></TopMain>
+        <DownMain {...data}></DownMain>
       </main>
 
       {isLoading && <h2>Cargando...</h2>}

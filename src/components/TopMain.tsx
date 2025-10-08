@@ -11,7 +11,7 @@ interface MainProps {
 export const TopMain: React.FC<MainProps> = ({ current, location }) => {
   return (
     <section>
-      <h1>{current.temp_c}</h1>
+      <h1>{current.temp_c}°C</h1>
 
       <h2> {location.name} </h2>
 

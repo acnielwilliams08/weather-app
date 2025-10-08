@@ -22,7 +22,7 @@ export const DownMain: React.FC<MainProps> = ({ current, location }) => {
       </div>
 
       <div className="wind">
-        <p>Velocidad del viento: {current.wind_kph}</p>
+        <p>Velocidad del viento: {current.wind_kph} km/h</p>
 
         <p>Dirección del viento: {current.wind_dir}</p>
       </div>
