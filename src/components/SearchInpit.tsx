@@ -1,4 +1,6 @@
 import { useRef, type FormEvent } from "react";
+import "../styles/SearchInpit.css";
+import icon from "../assets/search_24dp_E3E3E3_FILL0_wght400_GRAD0_opsz24.svg";
 
 interface SearchInpitProps {
   onAddRegion: (region: string) => void;
@@ -20,9 +22,11 @@ export const SearchInpit: React.FC<SearchInpitProps> = ({ onAddRegion }) => {
   };
 
   return (
-    <form onSubmit={onSumbitInput}>
-      <input type="text" ref={inputRef} />
-      <button>Buscar</button>
+    <form onSubmit={onSumbitInput} className="input_form">
+      <input type="text" ref={inputRef} className="input" />
+      <button className="input_button">
+        <img src={icon} alt="Search" />
+      </button>
     </form>
   );
 };
