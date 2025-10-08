@@ -1,25 +1,15 @@
-import { useEffect, useState } from "react";
-import { SearchInpit } from "./Components/SearchInpit";
-import { fetchApi } from "./helpers/fetchApi";
+import { useState } from "react";
+import { SearchInpit } from "./components/SearchInpit";
+import { useControlFetch } from "./hook/useControlFetch";
 
 export const App = () => {
   const [region, setRegion] = useState("Cuba");
-  const [isLoading, setisLoading] = useState(true);
-  const [data, setdata] = useState({});
 
   const onAddRegion = (region: string) => {
     setRegion(region);
   };
 
-  useEffect(() => {
-    if (region.length <= 0) return;
-
-    fetchApi(region).then((data) => setdata(data));
-
-    setisLoading(false);
-  }, [region]);
-
-  console.log(data);
+  const { data, isLoading } = useControlFetch(region);
 
   return (
     <>
