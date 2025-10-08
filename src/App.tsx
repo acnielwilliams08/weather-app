@@ -11,10 +11,12 @@ export const App = () => {
 
   const { data, isLoading } = useControlFetch(region);
 
+  if (data) {
+    const { current, location } = data;
+  }
+
   return (
     <>
-      <h1>Weather App</h1>
-
       <SearchInpit onAddRegion={onAddRegion}></SearchInpit>
 
       {isLoading && <h2>Cargando...</h2>}
