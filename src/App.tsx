@@ -1,6 +1,8 @@
 import { useState } from "react";
 import { SearchInpit } from "./components/SearchInpit";
 import { useControlFetch } from "./hook/useControlFetch";
+import { TopMain } from "./components/TopMain";
+import { DownMain } from "./components/DownMain";
 
 export const App = () => {
   const [region, setRegion] = useState("Cuba");
@@ -10,14 +12,19 @@ export const App = () => {
   };
 
   const { data, isLoading } = useControlFetch(region);
-
-  if (data) {
-    const { current, location } = data;
-  }
+  if (!data) return;
+  const { current, location } = data;
 
   return (
     <>
-      <SearchInpit onAddRegion={onAddRegion}></SearchInpit>
+      <header>
+        <SearchInpit onAddRegion={onAddRegion}></SearchInpit>
+      </header>
+
+      <main>
+        <TopMain current={current} location={location}></TopMain>
+        <DownMain current={current} location={location}></DownMain>
+      </main>
 
       {isLoading && <h2>Cargando...</h2>}
     </>

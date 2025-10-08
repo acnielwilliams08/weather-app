@@ -1,7 +1,7 @@
 import { useEffect, useState } from "react";
 import { fetchApi } from "../helpers/fetchApi";
 
-interface DataProps {
+export interface DataProps {
   current: {
     humidity: number;
     wind_kph: number;
