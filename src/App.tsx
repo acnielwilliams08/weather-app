@@ -11,20 +11,22 @@ export const App = () => {
 
   const { data, isLoading } = useControlFetch(region);
 
-  if (!data) return;
-
   return (
     <>
       <header>
         <SearchInpit onAddRegion={onAddRegion}></SearchInpit>
       </header>
 
-      <main>
-        <TopMain {...data}></TopMain>
-        <DownMain {...data}></DownMain>
-      </main>
-
       {isLoading && <h2>Cargando...</h2>}
+
+      {!data ? (
+        <h2>Busqueda invalida, intente denuevo</h2>
+      ) : (
+        <main>
+          <TopMain {...data}></TopMain>
+          <DownMain {...data}></DownMain>
+        </main>
+      )}
     </>
   );
 };
