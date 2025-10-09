@@ -1,0 +1,21 @@
+.top_main {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  gap: 1rem;
+}
+
+.degrees {
+  font-size: 6rem;
+  color: rgba(27, 114, 202, 0.814);
+  text-shadow: 1px 1px 10px rgb(160, 160, 160);
+}
+
+.container_region {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  color: rgb(3, 41, 41);
+}
