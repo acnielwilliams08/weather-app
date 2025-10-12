@@ -24,14 +24,14 @@ export interface DataProps {
 
 export const useControlFetch = (region: string) => {
   const [isLoading, setisLoading] = useState(true);
-  const [data, setdata] = useState<DataProps>();
+  const [data, setdata] = useState<DataProps | null>(null);
 
   useEffect(() => {
-    if (region.length <= 0) return;
+    if (!region || region.trim().length === 0) return;
 
-    fetchApi(region).then((data) => setdata(data));
-
-    setisLoading(false);
+    fetchApi(region)
+      .then((data) => setdata(data))
+      .finally(() => setisLoading(false));
   }, [region]);
 
   return {

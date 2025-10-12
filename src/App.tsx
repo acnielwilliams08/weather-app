@@ -17,14 +17,16 @@ export const App = () => {
         <SearchInpit onAddRegion={onAddRegion}></SearchInpit>
       </header>
 
-      {isLoading && <h2>Cargando...</h2>}
-
-      {!data ? (
-        <h2 className="herror_message">Busqueda inválida, intente denuevo</h2>
+      {!region ? (
+        <h2>Ingrese una región para comenzar</h2>
+      ) : isLoading ? (
+        <h2>Cargando...</h2>
+      ) : !data ? (
+        <h2 className="herror_message">Búsqueda inválida, intente de nuevo</h2>
       ) : (
         <main>
-          <TopMain {...data}></TopMain>
-          <DownMain {...data}></DownMain>
+          <TopMain {...data} />
+          <DownMain {...data} />
         </main>
       )}
     </>

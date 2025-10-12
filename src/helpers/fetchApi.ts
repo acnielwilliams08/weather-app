@@ -12,6 +12,6 @@ export const fetchApi = async (region: string) => {
     return data;
   } catch (error) {
     console.log(error);
-    return null;
+    return "";
   }
 };
